@@ -1,237 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>W3.CSS Template</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body {font-family: "Lato", sans-serif}
-.mySlides {display: none}
-</style>
+  <meta charset="UTF-8" />
+  <title>404 Not Found</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #335B67;
+      background: radial-gradient(ellipse at center, #335B67 0%, #2C3E50 100%) fixed no-repeat;
+      font-family: 'Source Sans Pro', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      margin: 0;
+    }
+
+    ::selection { background-color: rgba(0,0,0,0.2); }
+    ::-moz-selection { background-color: rgba(0,0,0,0.2); }
+
+    a {
+      color: white;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.5);
+      transition: all 0.5s ease;
+      margin-right: 10px;
+    }
+    a:hover {
+      text-shadow: 0 0 1px rgba(255,255,255,.5);
+      border-bottom: 1px solid rgba(255,255,255,1);
+    }
+
+    /* WRAP */
+    #wrap {
+      width: 80%;
+      max-width: 1400px;
+      margin: 8% auto 0 auto;
+      position: relative;
+    }
+
+    /* MAIN TEXT CONTENT */
+    #main-content {
+      float: right;
+      max-width: 45%;
+      color: white;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 28px;
+      padding-bottom: 40px;
+    }
+    #main-content h1 {
+      margin: 0 0 40px 0;
+      font-weight: 400;
+      font-size: 42px;
+    }
+
+    /* NAVIGATION BUTTONS */
+    #navigation { margin-top: 2%; }
+    #navigation a.navigation {
+      display: block;
+      float: left;
+      background-color: rgba(0,0,0,0.2);
+      padding: 0 15px;
+      color: white;
+      height: 41px;
+      line-height: 41px;
+      font-size: 16px;
+      margin-right: 2%;
+      margin-bottom: 2%;
+      border-bottom: none;
+      transition: all 0.5s ease;
+    }
+    #navigation a.navigation:hover {
+      background-color: rgba(26,188,156,0.7);
+    }
+
+    /* WORDSEARCH */
+    #wordsearch { width: 45%; float: left; }
+    #wordsearch ul { margin: 0; padding: 0; }
+    #wordsearch ul li {
+      float: left;
+      width: 12%;
+      background-color: rgba(0,0,0,.2);
+      list-style: none;
+      margin: 0 0.5% 0.5% 0;
+      text-align: center;
+      color: rgba(255,255,255,0.7);
+      text-transform: uppercase;
+      font-size: 1.6vw;
+      font-weight: 300;
+      transition: background-color 0.75s ease;
+    }
+    #wordsearch ul li.selected {
+      background-color: rgba(26,188,156,0.7);
+      color: #fff;
+      font-weight: 400;
+    }
+
+    /* SEARCH FORM */
+    #search { margin-top: 30px; }
+    #search input[type='text'] {
+      width: 88%;
+      height: 41px;
+      padding-left: 15px;
+      background-color: rgba(0,0,0,0.2);
+      border: none;
+      outline: none;
+      font-size: 16px;
+      font-weight: 300;
+      color: white;
+      font-family: 'Source Sans Pro', sans-serif;
+      transition: all 0.5s ease;
+    }
+
+    /* RESPONSIVE */
+    @media all and (max-width: 799px) {
+      #wrap { width: 90%; margin-top: 40px; }
+      #wordsearch { width: 90%; float: none; margin:0 auto; }
+      #wordsearch ul li { font-size: 4vw; }
+      #main-content { float: none; width: 90%; max-width: 90%; margin:30px auto 0 auto; text-align: justify; }
+      #main-content h1 { font-size: 28px; text-align: left; }
+      #search input[type='text'] { width: 84%; }
+    }
+  </style>
 </head>
 <body>
-
-<!-- Navbar -->
-<div class="w3-top">
-  <div class="w3-bar w3-black w3-card">
-    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-    <a href="#band" class="w3-bar-item w3-button w3-padding-large w3-hide-small">BAND</a>
-    <a href="#tour" class="w3-bar-item w3-button w3-padding-large w3-hide-small">TOUR</a>
-    <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
-    <div class="w3-dropdown-hover w3-hide-small">
-      <button class="w3-padding-large w3-button" title="More">MORE <i class="fa fa-caret-down"></i></button>     
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="#" class="w3-bar-item w3-button">Merchandise</a>
-        <a href="#" class="w3-bar-item w3-button">Extras</a>
-        <a href="#" class="w3-bar-item w3-button">Media</a>
-      </div>
-    </div>
-    <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
-  </div>
-</div>
-
-<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
-<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-  <a href="#band" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">BAND</a>
-  <a href="#tour" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">TOUR</a>
-  <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
-  <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MERCH</a>
-</div>
-
-<!-- Page content -->
-<div class="w3-content" style="max-width:2000px;margin-top:46px">
-
-  <!-- Automatic Slideshow Images -->
-  <div class="mySlides w3-display-container w3-center">
-    <img src="/w3images/la.jpg" style="width:100%">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-      <h3>Los Angeles</h3>
-      <p><b>We had the best time playing at Venice Beach!</b></p>   
-    </div>
-  </div>
-  <div class="mySlides w3-display-container w3-center">
-    <img src="/w3images/ny.jpg" style="width:100%">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-      <h3>New York</h3>
-      <p><b>The atmosphere in New York is lorem ipsum.</b></p>    
-    </div>
-  </div>
-  <div class="mySlides w3-display-container w3-center">
-    <img src="/w3images/chicago.jpg" style="width:100%">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-      <h3>Chicago</h3>
-      <p><b>Thank you, Chicago - A night we won't forget.</b></p>    
-    </div>
-  </div>
-
-  <!-- The Band Section -->
-  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
-    <h2 class="w3-wide">THE XAVIA LEGACY</h2>
-    <p class="w3-opacity"><i>We love games.</i></p>
-    <p class="w3-justify"></p>
-    <div class="w3-row w3-padding-32">
-      <div class="w3-third">
-        <p>Name</p>
-        <img src="/w3images/bandmember.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
-      </div>
-      <div class="w3-third">
-        <p>Name</p>
-        <img src="/w3images/bandmember.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
-      </div>
-      <div class="w3-third">
-        <p>Name</p>
-        <img src="/w3images/bandmember.jpg" class="w3-round" alt="Random Name" style="width:60%">
-      </div>
-    </div>
-  </div>
-
-  <!-- The Tour Section -->
-  <div class="w3-black" id="tour">
-    <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
-      <h2 class="w3-wide w3-center">TOUR DATES</h2>
-      <p class="w3-opacity w3-center"><i>Remember to book your tickets!</i></p><br>
-
-      <ul class="w3-ul w3-border w3-white w3-text-grey">
-        <li class="w3-padding">September <span class="w3-tag w3-red w3-margin-left">Sold out</span></li>
-        <li class="w3-padding">October <span class="w3-tag w3-red w3-margin-left">Sold out</span></li>
-        <li class="w3-padding">November <span class="w3-badge w3-right w3-margin-right">3</span></li>
+  <div id="wrap">
+    <div id="wordsearch">
+      <ul>
+        <li>k</li><li>v</li><li>n</li><li>z</li><li>i</li><li>x</li><li>m</li>
+        <li>e</li><li>t</li><li>a</li><li>x</li><li>l</li>
+        <li class="one">4</li><li class="two">0</li><li class="three">4</li>
+        <li>y</li><li>y</li><li>w</li><li>v</li><li>b</li><li>o</li><li>q</li>
+        <li>d</li><li>y</li><li>p</li><li>a</li>
+        <li class="four">p</li><li class="five">a</li><li class="six">g</li><li class="seven">e</li>
+        <li>v</li><li>j</li><li>a</li>
+        <li class="eight">n</li><li class="nine">o</li><li class="ten">t</li>
+        <li>s</li><li>c</li><li>e</li><li>w</li><li>v</li><li>x</li><li>e</li><li>p</li><li>c</li><li>f</li><li>h</li><li>q</li><li>e</li>
+        <li class="eleven">f</li><li class="twelve">o</li><li class="thirteen">u</li>
+        <li class="fourteen">n</li><li class="fifteen">d</li>
+        <li>s</li><li>w</li><li>q</li><li>v</li><li>o</li><li>s</li><li>m</li><li>v</li><li>f</li><li>u</li>
       </ul>
-
-      <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
-        <div class="w3-third w3-margin-bottom">
-          <img src="/w3images/newyork.jpg" alt="New York" style="width:100%" class="w3-hover-opacity">
-          <div class="w3-container w3-white">
-            <p><b>New York</b></p>
-            <p class="w3-opacity">Fri 27 Nov 2016</p>
-            <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
-          </div>
-        </div>
-        <div class="w3-third w3-margin-bottom">
-          <img src="/w3images/paris.jpg" alt="Paris" style="width:100%" class="w3-hover-opacity">
-          <div class="w3-container w3-white">
-            <p><b>Paris</b></p>
-            <p class="w3-opacity">Sat 28 Nov 2016</p>
-            <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
-          </div>
-        </div>
-        <div class="w3-third w3-margin-bottom">
-          <img src="/w3images/sanfran.jpg" alt="San Francisco" style="width:100%" class="w3-hover-opacity">
-          <div class="w3-container w3-white">
-            <p><b>San Francisco</b></p>
-            <p class="w3-opacity">Sun 29 Nov 2016</p>
-            <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
 
-  <!-- Ticket Modal -->
-  <div id="ticketModal" class="w3-modal">
-    <div class="w3-modal-content w3-animate-top w3-card-4">
-      <header class="w3-container w3-teal w3-center w3-padding-32"> 
-        <span onclick="document.getElementById('ticketModal').style.display='none'" 
-       class="w3-button w3-teal w3-xlarge w3-display-topright">×</span>
-        <h2 class="w3-wide"><i class="fa fa-suitcase w3-margin-right"></i>Tickets</h2>
-      </header>
-      <div class="w3-container">
-        <p><label><i class="fa fa-shopping-cart"></i> Tickets, $15 per person</label></p>
-        <input class="w3-input w3-border" type="text" placeholder="How many?">
-        <p><label><i class="fa fa-user"></i> Send To</label></p>
-        <input class="w3-input w3-border" type="text" placeholder="Enter email">
-        <button class="w3-button w3-block w3-teal w3-padding-16 w3-section w3-right">PAY <i class="fa fa-check"></i></button>
-        <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal').style.display='none'">Close <i class="fa fa-remove"></i></button>
-        <p class="w3-right">Need <a href="#" class="w3-text-blue">help?</a></p>
-      </div>
-    </div>
-  </div>
+    <div id="main-content">
+      <h1>We couldn't find what you were looking for.</h1>
+      <p>Unfortunately the page you were looking for could not be found. It may be
+      temporarily unavailable, moved or no longer exist.</p>
+      <p>Check the URL you entered for any mistakes and try again. Alternatively, search
+      for whatever is missing or take a look around the rest of our site.</p>
 
-  <!-- The Contact Section -->
-  <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
-    <h2 class="w3-wide w3-center">CONTACT</h2>
-    <p class="w3-opacity w3-center"><i>Fan? Drop a note!</i></p>
-    <div class="w3-row w3-padding-32">
-      <div class="w3-col m6 w3-large w3-margin-bottom">
-        <i class="fa fa-map-marker" style="width:30px"></i> Chicago, US<br>
-        <i class="fa fa-phone" style="width:30px"></i> Phone: +00 151515<br>
-        <i class="fa fa-envelope" style="width:30px"> </i> Email: mail@mail.com<br>
-      </div>
-      <div class="w3-col m6">
-        <form action="/action_page.php" target="_blank">
-          <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
-            <div class="w3-half">
-              <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
-            </div>
-            <div class="w3-half">
-              <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
-            </div>
-          </div>
-          <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
-          <button class="w3-button w3-black w3-section w3-right" type="submit">SEND</button>
+      <div id="search">
+        <form>
+          <input type="text" placeholder="Search" />
         </form>
       </div>
+
+      <div id="navigation">
+        <a class="navigation" href="/">Home</a>
+        <a class="navigation" href="#">About Us</a>
+        <a class="navigation" href="#">Site Map</a>
+        <a class="navigation" href="#">Contact</a>
+      </div>
     </div>
   </div>
 
-<!-- End Page Content -->
-</div>
+  <!-- jQuery (for the animations) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(function () {
+      var liWidth = $("li").css("width");
+      $("li").css("height", liWidth).css("lineHeight", liWidth);
+      $("#wordsearch").css("height", $("#wordsearch").css("width"));
+    });
 
-<!-- Image of location/map -->
-<img src="/w3images/map.jpg" class="w3-image w3-greyscale-min" style="width:100%">
+    $(window).on('resize', function () {
+      var liWidth = $(".one").css("width");
+      $("li").css("height", liWidth).css("lineHeight", liWidth);
+      $("#wordsearch").css("height", $("#wordsearch").css("width"));
+    });
 
-<!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
-  <i class="fa fa-facebook-official w3-hover-opacity"></i>
-  <i class="fa fa-instagram w3-hover-opacity"></i>
-  <i class="fa fa-snapchat w3-hover-opacity"></i>
-  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-  <i class="fa fa-twitter w3-hover-opacity"></i>
-  <i class="fa fa-linkedin w3-hover-opacity"></i>
-  <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-</footer>
-
-<script>
-// Automatic Slideshow - change image every 4 seconds
-var myIndex = 0;
-carousel();
-
-function carousel() {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  myIndex++;
-  if (myIndex > x.length) {myIndex = 1}    
-  x[myIndex-1].style.display = "block";  
-  setTimeout(carousel, 4000);    
-}
-
-// Used to toggle the menu on small screens when clicking on the menu button
-function myFunction() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
-
-// When the user clicks anywhere outside of the modal, close it
-var modal = document.getElementById('ticketModal');
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-</script>
-
+    // Animate highlighting of "404 page not found"
+    $(function () {
+      $(this).delay(1500).queue(function () { $(".one").addClass("selected"); $(this).dequeue(); })
+      .delay(500).queue(function () { $(".two").addClass("selected"); $(this).dequeue(); })
+      .delay(500).queue(function () { $(".three").addClass("selected"); $(this).dequeue(); })
+      .delay(500).queue(function () { $(".four").addClass("selected"); $(this).dequeue(); })
+      .delay(500).queue(function () { $(".five").addClass("selected"); $(this).dequeue(); })
+      .delay(500).queue(function () { $(".six").addClass("selected"); $(this).dequeue(); })
+      .delay(500).queue(function () { $(".seven").addClass("selected"); $(this).dequeue(); })
+      .delay(500).queue(function () { $(".eight").addClass("selected"); $(this).dequeue(); })
+      .delay(500).queue(function () { $(".nine").addClass("selected"); $(this).dequeue(); })
+      .delay(500).queue(function () { $(".ten").addClass("selected"); $(this).dequeue(); })
+      .delay(500).queue(function () { $(".eleven").addClass("selected"); $(this).dequeue(); })
+      .delay(500).queue(function () { $(".twelve").addClass("selected"); $(this).dequeue(); })
+      .delay(500).queue(function () { $(".thirteen").addClass("selected"); $(this).dequeue(); })
+      .delay(500).queue(function () { $(".fourteen").addClass("selected"); $(this).dequeue(); })
+      .delay(500).queue(function () { $(".fifteen").addClass("selected"); $(this).dequeue(); });
+    });
+  </script>
 </body>
 </html>

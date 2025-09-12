@@ -143,7 +143,9 @@ app.get("/", (req, res) => {
     latitude: req.headers["cf-latitude"] || "Unknown",
   });
 });
-
+app.use((req, res) => {
+  res.status(404).sendFile(path.join(__dirname, "/database/index.html"));
+});
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
