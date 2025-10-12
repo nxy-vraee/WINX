@@ -1,0 +1,12 @@
+{
+  "autoUpdate": true,
+  "mqtt": {
+    "enabled": true,
+    "reconnectInterval": 3600
+  },
+  "admins": [
+    61561142554143,
+    61555888416026
+  ],
+  "thread_with_admins": "1106822891521311"
+}

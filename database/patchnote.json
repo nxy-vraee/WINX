@@ -1,8 +1,0 @@
-{
-  "version": "4.3.2",
-  "patch": "XVIA-Release",
-  "date": "2023-10-01",
-  "patchNoteId": "XVIA-Release-4.3.2",
-  "note": "Update 4.3.2\n\n- Fixed a bug where the game would crash when trying to load a save file.\n- Added a new quest to the main story.\n- Improved the performance of the game.\n- Temporarily removed the match game mode. The developers are working on a new version of the game mode.\n\n\n- Xavia XII",
-  "file": null
-}
