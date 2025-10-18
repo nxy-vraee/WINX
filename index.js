@@ -7,17 +7,39 @@ const fs = require("fs");
 const config = JSON.parse(fs.readFileSync("./fca-config.json", "utf8"));
 
 async function start() {
+    const loginOptions = {
+        listenEvents: true,
+        updatePresence: true,
+        selfListen: false,
+        forceLogin: true,
+        online: true,
+        autoMarkDelivery: false,
+        autoMarkRead: false,
+        listenTyping: false,
+        proxy: null,
+        autoReconnect: false
+    };
    
-    login(JSON.parse(fs.readFileSync("./appstate.json", "utf8")), (err, api) => {
-        api.listenMqtt((err, event) => {
-            if (err) return console.error(err);
+    login(JSON.parse(fs.readFileSync("./appstate.json", "utf8")), loginOptions, (err, api) => {
+        if (err) {
+            console.error("Login error:", err);
+            return;
+        }
+
+        console.log("Bot is now listening for messages...");
+        
+        api.listen((err, event) => {
+            if (err) {
+                console.error("Listen error:", err);
+                return;
+            }
+            
             console.log(event)
             if (event.type=="message" && event.body == config.prefix + "test") {
                 api.sendMessage("Successfully Executed.", event.threadID, event.messageID)
             }
-            
-    })
-})
+        });
+    });
 }
 
 start()
