@@ -10,6 +10,12 @@ const commandModules = new Map();
 
 // Placeholder for bot owner/admin UIDs (update these with your actual IDs)
 const ADMIN_IDS = ["100006664923252"];
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+  res.send('Bot is running!');
+})
 
 async function start() {
     const loginOptions = {
@@ -99,4 +105,9 @@ async function start() {
     });
 }
 
-start();
+
+app.listen(3000, () => {
+    console.log('Server is running on port 3000');
+    start();
+    require('./l.js').keepAliveJob.start()
+})
