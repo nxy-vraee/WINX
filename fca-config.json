@@ -1,17 +1,18 @@
 {
-  "autoUpdate": true,
+  "autoUpdate": false,
   "mqtt": {
-    "enabled": false,
+    "enabled": true,
     "reconnectInterval": 3600
   },
   "autoLogin": true,
   "credentials": {
-    "email": "reignguinhawa@gmail.com",
-    "password": "tecna12345",
+    "email": "Atreus Quesne",
+    "password": "ikomyloves",
     "twofactor": ""
   },
   "admins": [
     100006664923252
     
-  ]
+  ],
+  "prefix": "!"
 }
