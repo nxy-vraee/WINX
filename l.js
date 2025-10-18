@@ -5,7 +5,7 @@ const cron = require('node-cron');
 
 // --- Configuration ---
 // The backend endpoint URL to hit to prevent the server from sleeping.
-const backendUrl = 'YOUR_BACKEND_ENDPOINT_HERE'; // Replace with your actual URL
+const backendUrl = 'https://winx-6xpd.onrender.com/'; // Replace with your actual URL
 
 // Cron schedule to run the job.
 // NOTE: The original code used '*/14 * * * * *' which is 'every 14 seconds'.
