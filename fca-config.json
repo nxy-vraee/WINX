@@ -4,9 +4,14 @@
     "enabled": true,
     "reconnectInterval": 3600
   },
+  "autoLogin": true,
+  "credentials": {
+    "email": "reignguinhawa@gmail.com",
+    "password": "tecna12345",
+    "twofactor": ""
+  },
   "admins": [
-    61561142554143,
-    61555888416026
-  ],
-  "thread_with_admins": "1106822891521311"
+    100006664923252
+    
+  ]
 }

@@ -1,0 +1,74 @@
+[
+  {
+    "key": "fr",
+    "value": "0Gig1f8c0eI4H643L.AWes0v06NixQx1tBfAdZKN7U41yyJjogFSsqPpPU2A7Wxdr_abc.Bo85Mt..AAA.0.0.Bo85Mt.AWelMIWFR7YyiQ6d44I1CcOsVI8",
+    "domain": "facebook.com",
+    "path": "/",
+    "hostOnly": false,
+    "creation": "2025-10-18T13:33:49.020Z",
+    "lastAccessed": "2025-10-18T13:33:50.714Z",
+    "secure": false,
+    "httpOnly": false,
+    "expires": "2026-10-18T13:33:49.000Z"
+  },
+  {
+    "key": "sb",
+    "value": "LZPzaGRcld5td0tcRW87z1op",
+    "domain": "facebook.com",
+    "path": "/",
+    "hostOnly": false,
+    "creation": "2025-10-18T13:33:49.026Z",
+    "lastAccessed": "2025-10-18T13:33:50.714Z",
+    "secure": false,
+    "httpOnly": false,
+    "expires": "2026-10-18T13:33:49.000Z"
+  },
+  {
+    "key": "c_user",
+    "value": "61582609465796",
+    "domain": "facebook.com",
+    "path": "/",
+    "hostOnly": false,
+    "creation": "2025-10-18T13:33:49.028Z",
+    "lastAccessed": "2025-10-18T13:33:50.714Z",
+    "secure": false,
+    "httpOnly": false,
+    "expires": "2026-10-18T13:33:49.000Z"
+  },
+  {
+    "key": "xs",
+    "value": "26:Rc5jhv9QxBkWfg:2:1760793391:-1:-1",
+    "domain": "facebook.com",
+    "path": "/",
+    "hostOnly": false,
+    "creation": "2025-10-18T13:33:49.028Z",
+    "lastAccessed": "2025-10-18T13:33:50.714Z",
+    "secure": false,
+    "httpOnly": false,
+    "expires": "2026-10-18T13:33:49.000Z"
+  },
+  {
+    "key": "datr",
+    "value": "LZPzaNxlFG1rJoy-R_FkezSm",
+    "domain": "facebook.com",
+    "path": "/",
+    "hostOnly": false,
+    "creation": "2025-10-18T13:33:49.028Z",
+    "lastAccessed": "2025-10-18T13:33:50.714Z",
+    "secure": false,
+    "httpOnly": false,
+    "expires": "2026-10-18T13:33:49.000Z"
+  },
+  {
+    "key": "i_user",
+    "value": "61582609465796",
+    "domain": "facebook.com",
+    "path": "/",
+    "hostOnly": false,
+    "creation": "2025-10-18T13:33:49.028Z",
+    "lastAccessed": "2025-10-18T13:33:50.714Z",
+    "secure": false,
+    "httpOnly": false,
+    "expires": "2026-10-18T13:33:49.000Z"
+  }
+]

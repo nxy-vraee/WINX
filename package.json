@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
-    "@dongdev/fca-unofficial": "^2.0.25",
+    "@dongdev/fca-unofficial": "^2.0.26",
     "abbrev": "^1.1.1",
     "accepts": "^2.0.0",
     "agent-base": "^7.1.4",
