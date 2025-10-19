@@ -61,48 +61,55 @@ async function start() {
         }
         // --- END COMMAND LOADING LOGIC ---
 
-        api.listenMqtt((err, event) => {
+        api.listenMqtt(async (err, event) => {
             if (err) {
                 console.error("Listen error:", err);
                 return;
             }
+
            
 
-            // Only process messages that start with the configured prefix
+            // ✅ Welcome new participants
+            if (event.type === "event" && event.logMessageType === "log:subscribe") {
+                try {
+                    const threadInfo = await api.getThreadInfo(event.threadID);
+                    const addedParticipants = event.logMessageData.addedParticipants;
+
+                    const mentions = {}
+                    mentions[event.logMessageData.addedParticipants[0].userFbId] = event.logMessageData.addedParticipants[0].fullName
+                    
+
+                    const names = addedParticipants.map(p => p.fullName).join(", ");
+                    const message = `👋 Welcome to ${threadInfo.threadName}, ${names}!`;
+
+                    api.sendMessage({ body: message, mentions }, event.threadID);
+                } catch (e) {
+                    console.error("❌ Failed to send welcome message:", e);
+                }
+            }
+
+            // ✅ Command handler
             if (event.type === "message" && event.body && event.body.startsWith(config.prefix)) {
-                // Remove prefix, trim whitespace, and split into arguments
                 const args = event.body.slice(config.prefix.length).trim().split(/ +/);
-                // Extract the command name and remove it from args
                 const command = args.shift().toLowerCase();
 
-                // --- COMMAND EXECUTION LOGIC ---
                 const module = commandModules.get(command);
 
                 if (module) {
-                    // Check if the command requires admin privileges
-                    if (module.config.needAdmin) {
-                        // NOTE: This is a simplified admin check. Update the ADMIN_IDS array above.
-                        if (!event.senderID in ADMIN_IDS) {
-                            return api.sendMessage(
-                                "🔒 You do not have permission to use this command.",
-                                event.threadID
-                            );
-                        }
+                    if (module.config.needAdmin && !ADMIN_IDS.includes(event.senderID)) {
+                        return api.sendMessage("🔒 You do not have permission to use this command.", event.threadID);
                     }
 
                     try {
                         if (module.startReminderChecker) {
                             module.startReminderChecker(api);
                         }
-                        // Execute the command's run function
-                        // The 'args' passed here contains only the parameters (e.g., ['match', 'team1', ...])
-                        module.run({api, event, args});
+                        module.run({ api, event, args });
                     } catch (execError) {
                         console.error(`Error executing command ${command}:`, execError);
                         api.sendMessage(`An internal error occurred while running the ${command} command.`, event.threadID);
                     }
                 }
-                // --- END COMMAND EXECUTION LOGIC ---
             }
         });
     });

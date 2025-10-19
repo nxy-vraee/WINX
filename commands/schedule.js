@@ -87,9 +87,10 @@ module.exports.run = async function ({ api, event, args }) {
 
             if (saveSchedules(schedules)) {
                 api.sendMessage(
-                    `✅ Scheduled Match ID ${newId}:\nTeams: ${teamName1} vs ${teamName2}\nTime: ${date} at ${time}`,
-                    threadID,
+                  `🎮 𝗠𝗔𝗧𝗖𝗛 𝗦𝗖𝗛𝗘𝗗𝗨𝗟𝗘 𝗖𝗢𝗡𝗙𝗜𝗥𝗠𝗘𝗗 ✅\n📅 𝗧𝗲𝗮𝗺𝘀: ${teamName1} 🆚 ${teamName2}\n🕒 𝗧𝗶𝗺𝗲: ${date} at ${time}\n🔗 𝗟𝗼𝗯𝗯𝘆 𝗟𝗶𝗻𝗸: https://s.mobilelegends.com/f4fkmVc\n\n🌟 𝗚𝗼𝗼𝗱 𝗟𝘂𝗰𝗸, 𝗪𝗜𝗡𝗫! \n — 𝑇𝑒𝑐𝑛𝑎, 𝗪𝗜𝗡𝗫 🧚‍♀️`,
+                  threadID
                 );
+
             } else {
                 api.sendMessage(
                     "❌ Failed to save the new schedule.",
