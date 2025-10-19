@@ -91,6 +91,9 @@ async function start() {
                     }
 
                     try {
+                        if (module.startReminderChecker) {
+                            module.startReminderChecker(api);
+                        }
                         // Execute the command's run function
                         // The 'args' passed here contains only the parameters (e.g., ['match', 'team1', ...])
                         module.run({api, event, args});
